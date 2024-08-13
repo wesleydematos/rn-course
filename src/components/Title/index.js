@@ -1,9 +1,10 @@
 import { Text, View } from "react-native";
+import styles from "./style";
 
 export default function Title() {
   return (
-    <View>
-      <Text>CONTADOR-IMC</Text>
+    <View style={styles.boxTitle}>
+      <Text style={styles.textTitle}>IMC CALCULATOR</Text>
     </View>
   );
 }
