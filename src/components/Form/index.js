@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Keyboard,
+  Pressable,
   Text,
   TextInput,
   TouchableOpacity,
@@ -47,7 +48,7 @@ export default function Form() {
   }
 
   return (
-    <View style={styles.formContext}>
+    <Pressable onPress={Keyboard.dismissl} style={styles.formContext}>
       <View style={styles.form}>
         <Text style={styles.formLabel}>Altura</Text>
         <TextInput
@@ -75,6 +76,6 @@ export default function Form() {
         </TouchableOpacity>
       </View>
       <ResultImc message={messageImc} result={imc} />
-    </View>
+    </Pressable>
   );
 }
