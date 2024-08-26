@@ -1,17 +1,30 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+import AppContacts from "./src/pages/AppContacts";
 import Contacts from "./src/pages/Contacts";
 import Informations from "./src/pages/Informations";
 
-const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function Tabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="AppContacts" component={AppContacts} />
+      <Tab.Screen name="Contacts" component={Contacts} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Contacts" component={Contacts} />
-        <Drawer.Screen name="Informations" component={Informations} />
-      </Drawer.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="AppContacts" component={Tabs} />
+        <Stack.Screen name="Informations" component={Informations} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
