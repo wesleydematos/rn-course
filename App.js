@@ -1,17 +1,17 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import Contacts from "./src/pages/Contacts";
 import Informations from "./src/pages/Informations";
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Contacts" component={Contacts} />
-        <Stack.Screen name="Informations" component={Informations} />
-      </Stack.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Contacts" component={Contacts} />
+        <Drawer.Screen name="Informations" component={Informations} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 
 export default function Informations() {
   return (
-    <View>
+    <View style={{ marginTop: 60 }}>
       <Text>Informations</Text>
     </View>
   );
